@@ -22,8 +22,8 @@ export const login = user => {
 			headers: {'Content-Type': 'application/json' }
 		})
 		.then(res => {
-			localStorage.setItem('access_token', res.data.token)
-			console.log(res)
+			localStorage.setItem('access_token', res.data.access_token)
+			console.log(localStorage)
 		})
 		.catch(err => {
 			console.log(err)
