@@ -28,8 +28,7 @@ class Login extends React.Component {
 		}
 
 		login(user).then(res => {
-			console.log(res)
-			if(res){
+			if(res.data.access_token){
 				this.props.history.push('/profile')
 			}
 		})

@@ -15,8 +15,8 @@ class Profile extends React.Component {
 	componentDidMount() {
 		getProfile().then(res => {
 			this.setState({
-				name: this.user.name,
-				email: this.user.email
+				name: res.name,
+				email: res.email
 			})
 		})
 	}

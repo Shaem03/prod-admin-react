@@ -23,7 +23,7 @@ export const login = user => {
 		})
 		.then(res => {
 			localStorage.setItem('access_token', res.data.access_token)
-			console.log(localStorage)
+			return res
 		})
 		.catch(err => {
 			console.log(err)
@@ -33,10 +33,9 @@ export const login = user => {
 export const getProfile = () => {
 	return axios
 		.get('http://localhost:8000/api/auth/user', {
-			headers: {'Authorization': 'Bearer ${localStorage.access_token}' }
+			headers: {'Authorization': 'Bearer' + ' ' + localStorage.access_token }
 		})
 		.then(res => {
-			console.log(res)
 			return res.data
 		})
 		.catch(err => {
