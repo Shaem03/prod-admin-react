@@ -9,6 +9,7 @@ class Register extends React.Component {
             name:'',
 			email: '',
 			password: '',
+            password_confirmation: '',
 			errors: {}
 		}
 
@@ -26,7 +27,8 @@ class Register extends React.Component {
 		const newUser = {
             name: this.state.name,
 			email: this.state.email,
-			password: this.state.password
+			password: this.state.password,
+            password_confirmation: this.state.password_confirmation
 		}
 
 		register(newUser).then(res => {
@@ -71,6 +73,15 @@ class Register extends React.Component {
     						value={this.state.passwordl}
     						onChange={this.onChange} />
     					</div>
+                        <div className="form-group">
+                            <label htmlFor="password">Password</label>
+                            <input type="password"
+                            className="form-control"
+                            name="password_confirmation"
+                            placeholder= "Confirm Password"
+                            value={this.state.password_confirmation}
+                            onChange={this.onChange} />
+                        </div>
     					<button type="submit" className="btn">Sign Up</button>
     				</form>
     			</div>
