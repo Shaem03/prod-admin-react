@@ -6,6 +6,8 @@ import Landing from './components/Landing'
 import Login from './components/Login'
 import Profile from './components/Profile'
 import Register from './components/Register'
+import Category from './lists/Category'
+import CategoryList from './lists/CategoryList'
 
 class App extends React.Component {
   render(){
@@ -18,6 +20,8 @@ class App extends React.Component {
             <Route exact path="/register" component = {Register} />
             <Route exact path="/login" component = {Login} />
             <Route exact path="/profile" component = {Profile} />
+            <Route exact path="/add-category" component = {Category} />
+            <Route exact path="/category-list" component = {CategoryList} />
           </div>
         </div>
       </Router>

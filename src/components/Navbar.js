@@ -35,6 +35,16 @@ class Navbar extends React.Component {
                     </Link> 
                 </li>
                 <li className="nav-item">
+                    <a href="/add-category" className="nav-link">
+                        Add Category
+                    </a> 
+                </li>
+                <li className="nav-item">
+                    <a href="/category-list" className="nav-link">
+                        Category List
+                    </a> 
+                </li>
+                <li className="nav-item">
                     <a href="/" onClick= {this.logOut.bind(this)} className="nav-link">
                         Logout
                     </a> 
