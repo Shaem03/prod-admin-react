@@ -1,8 +1,9 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router-dom'
+import {Navbar, Nav, Form, FormControl, Button} from 'react-bootstrap'
+import './App.css';
 
-
-class Navbar extends React.Component {
+class NavbarProd extends React.Component {
 
     logOut(e){
         e.preventDefault()
@@ -16,7 +17,7 @@ class Navbar extends React.Component {
             <ul className="navbar-nav">
                 <li className="nav-item">
                     <Link to="/login" className="nav-link">
-                        Login
+                        <button className='button_login'> Login </button>
                     </Link> 
                 </li>
                 <li className="nav-item">
@@ -53,31 +54,31 @@ class Navbar extends React.Component {
     )
 
     return (
-    	<nav className="navbar navbar-expand-lg navbar-dark bg-dark rounded">
-    		<button className="navbar-toggle"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbar1"
-                aria-controls= "navbar1"
-                aria-expanded = "false"
-                aria-label="Toggle navigation"
-            >
-                <span className="navbar-toggler-icon">  </span>
-    		</button>
-            <div id="navbar1" className="collapse navbar-collapse justify-content0md-center">
-                <ul className="navbar-nav">
-                    <li className="nav-item">
-                        <Link to="/" className="nav-link">
-                            Home
-                        </Link> 
-                    </li>
-                </ul>
-                {localStorage.access_token ? userLink : loginRegLink}
-            </div>
-    	</nav>
+    	// <nav className="navbar navbar-expand-lg navbar-dark bg-dark rounded">
+        //     <div id="navbar1" className="collapse navbar-collapse justify-content0md-center">
+        //         <ul className="navbar-nav">
+        //             <li className="nav-item ">
+        //                 <Link to="/" className="nav-link">
+        //                     Home
+        //                 </Link> 
+        //             </li>
+        //         </ul>
+        //         {localStorage.access_token ? userLink : loginRegLink}
+        //     </div>
+        // </nav>
+        <Navbar bg="light" variant="light">
+            <Navbar.Brand href="/"> 
+                <img src="./cartLogo.jpg" alt="logo" height='50px'/> 
+            </Navbar.Brand>
+            <Nav className="mr-auto">
+                <Nav.Link href="/">Home</Nav.Link>
+            </Nav>
+            {localStorage.access_token ? userLink : loginRegLink}
+        </Navbar>
+            
     );
   }
 
 }
 
-export default withRouter(Navbar);
+export default withRouter(NavbarProd);

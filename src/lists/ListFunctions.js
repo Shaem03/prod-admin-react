@@ -24,7 +24,7 @@ export const getCategory = () => {
 			headers: headers
 		})
 		.then(res => {
-			return res.data
+			console.log(res.data)
 		})
 		.catch(err => {
 			console.log(err)
